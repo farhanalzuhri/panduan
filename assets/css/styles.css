@@ -115,7 +115,7 @@ p { color: var(--text); }
 .reveal.is-visible { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
 
 /* Footer */
-.site-footer { border-top: 1px solid var(--divider); padding: 32px 0; color: var(--muted); }
+.site-footer { border-top: 1px solid var(--divider); padding: 32px 0; color: var(--muted); text-align: center;}
 
 /* Respect prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
