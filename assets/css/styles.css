@@ -1,0 +1,402 @@
+/* Basic reset & tokens */
+* { box-sizing: border-box; }
+:root {
+  /* Brand utama & aksen */
+  --brand: #214597;
+  --brand-2: #48C0F0;
+  --brand-secondary: #0A9935;
+
+  /* Surface & teks */
+  --bg: #F6F8FB;
+  --bg-alt: #FFFFFF;
+  --card: #FFFFFF;
+  --text: #1E293B;
+  --muted: #667085;
+
+  /* Efek & radius */
+  --ring: rgba(33, 69, 151, 0.30);
+  --shadow: 0 8px 24px rgba(2, 6, 23, 0.08);
+  --radius: 20px;
+  --radius-sm: 14px;
+  --maxw: 1024px;
+  --space: 24px;
+
+  /* Border lembut */
+  --border: rgba(2, 6, 23, 0.08);
+  --divider: rgba(2, 6, 23, 0.06);
+}
+
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+  line-height: 1.65;
+  color: var(--text);
+  background: linear-gradient(180deg, #F6F8FB 0%, #E8F0FA 100%);
+}
+
+/* Containers */
+.container { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: saturate(150%) blur(8px);
+  background: rgba(255,255,255,.75);
+  border-bottom: 1px solid var(--divider);
+}
+.site-title { margin: 18px 0 4px; letter-spacing: .2px; }
+.site-subtitle { margin: 0 0 12px; color: var(--muted); }
+
+.step-nav { display: flex; flex-wrap: wrap; gap: 8px 12px; padding: 12px 0 16px; }
+.step-nav a {
+  text-decoration: none; color: var(--brand);
+  padding: 8px 12px; border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(33,69,151,.06);
+}
+.step-nav a:hover { border-color: rgba(33,69,151,.25); }
+
+/* Sections */
+.section { padding: 72px 0; }
+.section.alt { background: var(--bg-alt); }
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(20px, 3.5vw, 32px);
+  box-shadow: var(--shadow);
+}
+.card.mini { border-radius: var(--radius-sm); }
+
+/* Type */
+h1, h2, h3 { line-height: 1.25; }
+h1 { font-size: clamp(28px, 4vw, 40px); }
+h2 { font-size: clamp(22px, 3vw, 28px); margin-top: 0; }
+h3 { font-size: clamp(18px, 2.4vw, 22px); }
+p { color: var(--text); }
+.list { padding-left: 18px; }
+.list li { margin-bottom: 6px; color: var(--muted); }
+
+/* Grid for sub-steps */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 16px 0 8px;
+}
+
+/* Buttons */
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #0a0f1d;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+  border: 0;
+  box-shadow: 0 6px 18px var(--ring);
+  transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px var(--ring); opacity: .98; }
+.btn:focus { outline: 3px solid var(--ring); outline-offset: 2px; }
+.btn:active { transform: translateY(0); }
+.btn.btn-secondary {
+  background: #fff; color: var(--brand);
+  border: 1px solid var(--border); box-shadow: none;
+}
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(14px) scale(.98); }
+.reveal.is-visible { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--divider); padding: 32px 0; color: var(--muted); }
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal.is-visible { transition: none !important; transform: none !important; opacity: 1 !important; }
+}
+
+/* Responsive spacing tweaks */
+@media (max-width: 640px) {
+  .section { padding: 56px 0; }
+}
+/* Responsive spacing tweaks */
+@media (max-width: 640px) {
+  .section { padding: 56px 0; }
+}
+
+/* --- Fokus 1 section saja di layar --- */
+main {
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s ease, visibility .4s ease;
+  scroll-snap-align: start;
+}
+
+.section.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.section:not(.is-active) {
+  pointer-events: none;
+}
+
+/* opsional untuk kompensasi header sticky */
+.section { scroll-margin-top: 70px; }
+
+/* === Progress bar (fixed top) === */
+.progress {
+  position: fixed; inset: 0 0 auto 0; height: 4px; z-index: 90;
+  background: rgba(2,6,23,.06);
+  pointer-events: none;
+}
+.progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  transition: width .25s ease;
+}
+
+/* === Numbered steps (bulatan berangka) === */
+.progress-steps {
+  position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 8px; padding: 6px 10px; border-radius: 999px;
+  background: rgba(255,255,255,.8);
+  border: 1px solid var(--border);
+  z-index: 100; backdrop-filter: blur(6px) saturate(140%);
+}
+
+/* satu gaya saja untuk step (INACTIVE & ACTIVE) */
+.progress-steps .step {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font: 700 12px/1 system-ui, sans-serif;
+  color: var(--muted);
+  background: transparent;
+  box-shadow: inset 0 0 0 2px var(--border);
+  transition: transform .2s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.progress-steps .step.is-active {
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #0a0f1d;
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+/* Hapus semua rule lama untuk .dot dan duplikat .step */
+
+/* Hilangkan underline pada link progress steps */
+.progress-steps a {
+  text-decoration: none;
+}
+.progress-steps a:hover,
+.progress-steps a:focus {
+  text-decoration: none;
+}
+
+/* (Opsional tapi disarankan) — efek fokus yang rapi */
+.progress-steps a:focus .step {
+  outline: 2px solid var(--brand-2);
+  outline-offset: 2px;
+}
+/* === Aksen Hijau Perpusnas (Tambahan Aman) === */
+
+/* Progress bar: gradasi biru ke hijau */
+.progress__bar {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2), var(--brand-secondary));
+}
+
+/* Heading garis bawah hijau lembut */
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--brand-secondary);
+  border-radius: 3px;
+  margin-top: 8px;
+}
+
+/* Tombol Next dengan aksen hijau */
+.btn.next {
+  background: linear-gradient(135deg, var(--brand), var(--brand-secondary));
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(10, 153, 53, 0.35);
+}
+.btn.next:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(10, 153, 53, 0.45);
+}
+
+/* Footer dengan garis hijau tipis */
+.site-footer {
+  border-top: 2px solid var(--brand-secondary);
+}
+
+/* --- Fix: gambar responsif di dalam card & grid --- */
+.card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: calc(var(--radius-sm) - 2px);
+}
+
+.card.mini { 
+  overflow: hidden;                 /* supaya gambar gede tidak keluar kartu */
+}
+
+figure { 
+  margin: 0;                        /* rapikan default margin figure */
+}
+
+figcaption { 
+  font-size: 0.9rem; 
+  color: var(--muted); 
+  margin-top: 8px; 
+}
+
+.grid { 
+  align-items: start;               /* cegah konten saling dorong */
+}
+
+/* === Diagram Workflow Mini (Perpusnas accent) === */
+.workflow-mini {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #f5f7fa;
+  background: linear-gradient(135deg, #1B998B 0%, #3FB2A3 50%, #7AA2FF 100%);
+  padding: 10px 22px;
+  border-radius: 999px;
+  margin: 28px auto;
+  width: fit-content;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.workflow-mini:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.workflow-mini .arrow {
+  opacity: 0.85;
+  font-size: 1.2em;
+  color: rgba(255,255,255,0.9);
+}
+/* Headline dengan badge tahap */
+.step-head { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.step-badge {
+  font-weight:700; font-size:.9rem; color:#fff;
+  padding:6px 10px; border-radius:999px;
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  box-shadow: 0 2px 10px var(--ring);
+}
+
+/* Checklist dengan ceklist hijau (sesuai aksen Perpusnas) */
+.checklist { margin: 12px 0 8px; padding-left: 0; list-style: none; }
+.checklist li {
+  position: relative; padding-left: 28px; margin: 8px 0; color: var(--text);
+}
+.checklist li::before {
+  content: "✔"; position: absolute; left: 0; top: 0;
+  color: var(--brand-secondary); font-weight: 700;
+}
+
+/* Pastikan gambar rapi di kartu mini */
+.card img { width:100%; height:auto; display:block; }
+.card.mini { overflow:hidden; }
+.grid > .card.mini img { aspect-ratio: 3 / 2; object-fit: cover; }
+
+/* Tombol nonaktif */
+.btn.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  filter: grayscale(0.5);
+}
+
+/* Checklist versi label */
+.checklist label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.checklist input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--brand);
+}
+.checklist label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 10px 0;
+}
+.checklist .icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.checklist strong {
+  display: block;
+  color: var(--text);
+}
+.checklist small {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+.card.mini figcaption { line-height: 1.5; }
+.card.mini figcaption .points {
+  margin: 6px 0 0 0;
+  padding-left: 18px;
+}
+.card.mini figcaption .points li {
+  color: var(--muted);
+  margin: 4px 0;
+}
+.card.mini strong { color: var(--text); }
+
+#penutup {
+  background: linear-gradient(180deg, #f9fafb 0%, #eef7ff 100%);
+  text-align: center;
+}
+
+#penutup .card p {
+  max-width: 800px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+

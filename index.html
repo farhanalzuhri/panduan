@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Panduan Pelaksanaan</title>
+  <meta name="description" content="Panduan pelaksanaan dengan efek reveal on scroll (Jalur A)" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Progress Indicator -->
+<div class="progress" aria-label="Progress halaman">
+  <div class="progress__bar" style="width:0%"></div>
+</div>
+
+<!-- (Opsional) Dots langkah -->
+<div class="progress-steps" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">Panduan Pelaksanaan</h1>
+      <p class="site-subtitle">Jelajahi panduan ini dengan menggulir ke bawah — setiap tahap akan muncul secara bertahap untuk memudahkan Anda mengikuti alurnya.</p>
+      <nav class="step-nav" aria-label="Navigasi tahapan">
+        <a href="#opening">Opening</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#tahap-1">Tahap 1</a>
+        <a href="#tahap-2">Tahap 2</a>
+        <a href="#tahap-3">Tahap 3</a>
+        <a href="#tahap-4">Tahap 4</a>
+        <a href="#tahap-5">Tahap 5</a>
+        <a href="#tahap-6">Tahap 6</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="opening" class="section">
+      <div class="container">
+        <article class="card reveal">
+          <h2>Opening</h2>
+          <p>Panduan ini disusun sebagai acuan bagi pegawai dalam memahami dan menerapkan Standar Operasional Prosedur (SOP) Pengambilan Gambar Naskah Kuno Berbahan Kertas di Unit Preservasi, Perpustakaan Nasional Republik Indonesia. Panduan ini bertujuan untuk meningkatkan pemahaman teknis, ketepatan prosedur, serta konsistensi hasil dokumentasi naskah kuno sesuai standar pelestarian.</p>
+
+          <p>Melalui website interaktif ini, pengguna dapat mempelajari langkah-langkah pengambilan gambar secara sistematis, mulai dari persiapan alat, penataan naskah, pengaturan pencahayaan, hingga penyimpanan hasil digital. Selain itu, panduan ini juga mengintegrasikan nilai-nilai ASN BerAKHLAK, khususnya Kompeten, Adaptif, dan Kolaboratif, dengan memanfaatkan teknologi digital sebagai sarana pembelajaran yang mudah diakses dan aplikatif.</p>
+
+          <p>Dengan adanya panduan ini, diharapkan proses pengambilan gambar naskah kuno dapat dilakukan dengan lebih efektif, efisien, serta mendukung upaya pelestarian bahan pustaka secara berkelanjutan.</p>
+
+          <div class="actions">
+            <a class="btn next" href="#workflow">Lihat Alur Singkat</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="workflow" class="section alt">
+  <div class="container">
+    <article class="card reveal">
+      <h2>Workflow Singkat</h2>
+      <figure class="reveal">
+        <img src="assets/img/workflow-ringkas.jpg" alt="Workflow singkat proses digitalisasi naskah kuno" width="100%" />
+        <figcaption>Ringkasan alur: Persiapan → Pengukuran Cahaya → Kalibrasi → Pemotretan → Pengolahan → Prosedur Akhir.</figcaption>
+      </figure>
+      <div class="actions">
+        <a class="btn next" href="#tahap-1">Mulai Tahap 1 →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+ <section id="tahap-1" class="section">
+  <div class="container">
+    <article class="card reveal">
+      <div class="step-head">
+        <h2>Tahap 1 - Persiapan Awal</h2>
+      </div>
+
+      <p>Pastikan semua perlengkapan siap dan area kerja aman sebelum pemotretan. Langkah ini memastikan hasil digitalisasi memiliki pencahayaan dan warna yang konsisten sejak awal.</p>
+
+      <!-- Checklist alat -->
+      <form id="checklistForm" class="checklist">
+        <label>
+          <input type="checkbox" />
+          <img src="assets/icons/gloves.png" alt="" class="icon" />
+          <div>
+            <strong>APD &amp; sarung tangan</strong>
+            <small>Melindungi naskah dari minyak atau keringat pada tangan agar tidak merusak permukaan kertas.</small>
+          </div>
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          <img src="assets/icons/camera.png" alt="" class="icon" />
+          <div>
+            <strong>Kamera + lensa + baterai/catu daya</strong>
+            <small>Pastikan baterai penuh, lensa bersih, dan pengaturan kamera siap untuk pencahayaan studio.</small>
+          </div>
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          <img src="assets/icons/tripod.png" alt="" class="icon" />
+          <div>
+            <strong>Tripod / copy stand</strong>
+            <small>Menjaga posisi kamera sejajar dengan naskah agar tidak terjadi distorsi perspektif.</small>
+          </div>
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          <img src="assets/icons/lamp.png" alt="" class="icon" />
+          <div>
+            <strong>Lampu kiri–kanan (45°)</strong>
+            <small>Memberikan pencahayaan merata tanpa bayangan atau pantulan berlebih di permukaan naskah.</small>
+          </div>
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          <img src="assets/icons/qp-card.png" alt="" class="icon" />
+          <div>
+            <strong>Background netral + QP card</strong>
+            <small>Digunakan untuk kalibrasi warna dan white balance agar hasil digital sesuai warna asli naskah. (pastikan background bersih)</small>
+          </div>
+        </label>
+
+        <label>
+          <input type="checkbox" />
+          <img src="assets/icons/memory.png" alt="" class="icon" />
+          <div>
+            <strong>Kabel tether / kartu memori cadangan</strong>
+            <small>Menjamin proses pemotretan berjalan tanpa gangguan serta data tersimpan aman.</small>
+          </div>
+        </label>
+      </form>
+
+      <p class="hint">💡 <strong>Tips:</strong> Lakukan uji pencahayaan dengan QP card sebelum memotret naskah utama untuk menjaga konsistensi warna antar sesi.</p>
+
+      <div class="actions">
+        <a class="btn btn-secondary" href="#opening">← Kembali</a>
+        <a id="nextBtn" class="btn next disabled" href="#tahap-2" aria-disabled="true">Lanjut ke Tahap 2 →</a>
+      </div>
+
+      <!-- Foto panduan -->
+      <div class="grid">
+        <figure class="card mini reveal">
+          <img src="assets/img/persiapan-alat.jpg" alt="Penataan alat sebelum pemotretan" loading="lazy" />
+          <figcaption>Penataan alat di meja kerja.</figcaption>
+        </figure>
+        <figure class="card mini reveal">
+          <img src="assets/img/qp-card.jpg" alt="QP card untuk kalibrasi warna" loading="lazy" />
+          <figcaption>Siapkan QP card untuk kalibrasi warna.</figcaption>
+        </figure>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+    <section id="tahap-2" class="section">
+  <div class="container">
+    <article class="card reveal">
+      <div class="step-head">
+        <h2>Tahap 2 – Pengaturan Cahaya & Kamera</h2>
+      </div>
+
+      <p>Seimbangkan pencahayaan dan atur kamera pada mode manual agar eksposur konsisten, tajam, dan bebas bayangan/glare.</p>
+
+      <div class="grid">
+        <!-- 1) Penataan Pencahayaan 45° -->
+        <figure class="card mini reveal">
+          <img src="assets/img/posisi-lampu.jpg" alt="Dua lampu ditempatkan simetris 45 derajat terhadap bidang naskah" loading="lazy" />
+          <figcaption>
+            <strong>Penataan Pencahayaan (±45°)</strong><br>
+            Tempatkan dua lampu kiri–kanan pada sudut ±45° terhadap bidang naskah. Gunakan diffuser agar cahaya lembut dan merata, minim pantulan.
+          </figcaption>
+        </figure>
+
+        <!-- 2) Pengukuran Cahaya (Light Meter) -->
+        <figure class="card mini reveal">
+          <img src="assets/img/light-meter.jpg" alt="Pengukuran intensitas cahaya menggunakan light meter" loading="lazy" />
+          <figcaption>
+            <strong>Pengukuran Cahaya (Light Meter)</strong><br>
+            Setel light meter: <em>Flash/Continuous</em>, ISO 100, <em>shutter</em> ≈ panjang fokus (contoh: 50 mm → 1/50 s). 
+            Ukur di tengah & empat sudut; pastikan selisih ≤ <em>±0,3 stop</em>. 
+            Jika tidak konsisten: cek daya lampu, jarak, dan sudut.
+          </figcaption>
+        </figure>
+
+        <!-- 3) Pengaturan Kamera (Manual) -->
+        <figure class="card mini reveal">
+          <img src="assets/img/pengaturan-kamera.jpg" alt="Pengaturan kamera mode manual untuk pemotretan naskah" loading="lazy" />
+          <figcaption>
+            <strong>Pengaturan Kamera (Mode Manual)</strong><br>
+            ISO 100–200 · Aperture f/8–f/11 · <em>Shutter</em> menyesuaikan hasil pengukuran. 
+            Gunakan RAW, tripod/copy stand, dan cek histogram agar tidak over/under.
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="hint">💡 <strong>Tips:</strong> Simpan catatan nilai F & shutter per sesi agar konsisten antar batch. Gunakan kabel shutter atau timer untuk menghindari getaran.</p>
+
+      <div class="actions">
+        <a class="btn btn-secondary" href="#tahap-1">← Kembali ke Tahap 1</a>
+        <a class="btn next" href="#tahap-3">Lanjut ke Tahap 3 →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+
+<section id="tahap-3" class="section">
+  <div class="container">
+    <article class="card reveal">
+      <div class="step-head">
+        <h2>Tahap 3 – Kalibrasi</h2>
+      </div>
+
+      <p>Lakukan kalibrasi perangkat dan gambar sebelum pemotretan: koneksi tethering, pengaturan aplikasi, komposisi, fokus, white balance, dan koreksi distorsi.</p>
+
+      <div class="grid">
+        <!-- 1) Kabel Tethering -->
+        <figure class="card mini reveal">
+          <img src="assets/img/tethering.jpg" alt="Menghubungkan kamera ke komputer dengan kabel tether dan jerk stopper" loading="lazy" />
+          <figcaption>
+            <strong>Kabel Tethering</strong>
+            <ul class="points">
+              <li>Hubungkan kamera ke komputer via kabel tether.</li>
+              <li>Gunakan <em>jerk stopper</em> agar kabel tidak tertarik.</li>
+              <li>Pastikan koneksi stabil & port tidak longgar.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 2) Penyimpanan & Aplikasi -->
+        <figure class="card mini reveal">
+          <img src="assets/img/metadata.jpg" alt="Membuat session baru di software capture dan memilih folder penyimpanan" loading="lazy" />
+          <figcaption>
+            <strong>Penyimpanan & Aplikasi</strong>
+            <ul class="points">
+              <li>Buka <em>Capture One</em> / <em>Focus Hasselblad</em>.</li>
+              <li>Buat <em>session</em> baru (nama sesuai pedoman).</li>
+                <small class="note">
+                <strong>Penamaan file:</strong> Gunakan format 
+                <code>YYYY_NK_NomorPanggil_JudulNaskah</code> 
+                misal <code>2025_NK_KBG_687_Sekar_Tanjung_Tuwuh_Ing_Sela</code>
+                </small>
+
+              <li>Pilih lokasi simpan di folder kerja/HDD eksternal.</li>
+            </ul>
+            
+          </figcaption>
+        </figure>
+
+        <!-- 3) Live View & Komposisi -->
+        <figure class="card mini reveal">
+          <img src="assets/img/posisi-lampu.jpg" alt="Mengatur komposisi naskah pada bidang foto dengan panduan grid" loading="lazy" />
+          <figcaption>
+            <strong>Live View & Komposisi</strong>
+            <ul class="points">
+              <li>Aktifkan <em>Live View</em>.</li>
+              <li>Posisi center, lurus horizontal–vertikal.</li>
+              <li>Bebas benda asing; tidak melengkung/miring.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 4) Cek Fokus -->
+        <figure class="card mini reveal">
+          <img src="assets/img/pengaturan-kamera.jpg" alt="Pemeriksaan fokus dengan zoom atau focus masking" loading="lazy" />
+          <figcaption>
+            <strong>Cek Fokus</strong>
+            <ul class="points">
+              <li>Periksa dengan <em>Zoom In</em> / <em>Focus Masking</em>.</li>
+              <li>Pastikan huruf tajam (uji tiap ganti halaman).</li>
+              <li>Cover kosong: gunakan kertas bertulisan untuk tes.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 5) White Balance -->
+        <figure class="card mini reveal">
+          <img src="assets/img/white-balance.jpg" alt="Kalibrasi white balance menggunakan area netral/abu-abu" loading="lazy" />
+          <figcaption>
+            <strong>White Balance</strong>
+            <ul class="points">
+              <li>Buka menu <em>White Balance</em>, pilih <em>Pick WB</em>.</li>
+              <li>Klik area netral/abu-abu pada gambar uji.</li>
+              <li>Gunakan <em>Copy Adjustments</em> untuk batch berikutnya.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 6) Koreksi Distorsi (opsional) -->
+        <figure class="card mini reveal">
+          <img src="assets/img/ekspor.jpg" alt="Koreksi garis keystone dan distorsi agar tepi halaman lurus" loading="lazy" />
+          <figcaption>
+            <strong>Koreksi Distorsi (Opsional)</strong>
+            <ul class="points">
+              <li>Keystone → <em>Guides</em> → <em>Auto</em> untuk luruskan tepi.</li>
+              <li>Geser <em>Distortion</em> secukupnya (≤ 120).</li>
+              <li><em>Copy Adjustments</em> bila perlu ke gambar lain.</li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="hint">💡 <strong>Tips:</strong> Input nilai exposure dari light meter (Tahap 2) ke menu <em>Tether → Camera</em>, lalu ambil satu foto uji. Cek histogram sebelum lanjut ke Tahap 4.</p>
+
+      <div class="actions">
+        <a class="btn btn-secondary" href="#tahap-2">← Kembali ke Tahap 2</a>
+        <a class="btn next" href="#tahap-4">Lanjut ke Tahap 4 →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section id="tahap-4" class="section">
+  <div class="container">
+    <article class="card reveal">
+      <div class="step-head">
+        <h2>Tahap 4 – Pemotretan (Single Page & Penamaan File)</h2>
+      </div>
+
+      <p>Lakukan pemotretan per halaman (single page) dengan penamaan file yang konsisten dan berurutan. Gunakan hasil kalibrasi dari Tahap 3.</p>
+
+      <div class="grid">
+        <!-- 1) Pengaturan Penamaan File -->
+        <figure class="card mini reveal">
+          <img src="assets/img/naming.jpg" alt="Pengaturan format penamaan file di perangkat lunak capture" loading="lazy" />
+          <figcaption>
+            <strong>Pengaturan Penamaan</strong>
+            <ul class="points">
+              <li>Tentukan bagian: <em>Front Cover (FC)</em>, <em>Recto (R)</em>, <em>Verso (V)</em>, <em>Back Cover (BC)</em>.</li>
+              <li>Format umum: <code>YYYY_NK_NomorPanggil_AutoCounter (3 Digit)_Recto(R/V/FC/BC)</code></li>
+              <li>Di software: <em>Tether → Next Capture Naming → Naming Format</em> → tambahkan <code>_####</code>.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 2) Persiapan Sebelum Memotret -->
+        <figure class="card mini reveal">
+          <img src="assets/img/persiapan-pemotretan.jpg" alt="Persiapan area kerja sebelum pemotretan" loading="lazy" />
+          <figcaption>
+            <strong>Persiapan Sebelum Memotret</strong>
+            <ul class="points">
+              <li>Pastikan format nama sudah benar.</li>
+              <li>Atur/selaraskan <em>Set Capture Counter</em> (mulai nomor yang tepat).</li>
+              <li>Area kerja bersih & stabil, halaman yang akan dipotret sudah siap.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 3) Proses Pemotretan (Single Page) -->
+        <figure class="card mini reveal">
+          <img src="assets/img/single-page.jpg" alt="Pemotretan single page dari software capture" loading="lazy" />
+          <figcaption>
+            <strong>Pemotretan (Single Page)</strong>
+            <ul class="points">
+              <li>Aktifkan <em>Auto Focus (AF)</em> bila diperlukan.</li>
+              <li>Tekan <em>Capture/Shutter</em> dari software (tether), bukan tombol kamera.</li>
+              <li>Ambil 1 halaman per jepret; jaga urutan halaman.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 4) Reset & Lanjut Bagian Berikutnya -->
+        <figure class="card mini reveal">
+          <img src="assets/img/reset-counter.jpg" alt="Reset capture counter saat pindah bagian pemotretan" loading="lazy" />
+          <figcaption>
+            <strong>Reset & Lanjut</strong>
+            <ul class="points">
+              <li>Selesai Recto → ubah nama ke <em>Verso</em> di <em>Next Capture Naming</em>.</li>
+              <li>Gunakan <em>Reset Capture Counter</em> untuk mulai nomor dari awal bagian baru.</li>
+              <li>Ulangi untuk FC/BC atau bagian lain sesuai kebutuhan.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 5) Kontrol Kualitas Sementara -->
+        <figure class="card mini reveal">
+          <img src="assets/img/qc-semester.jpg" alt="Pemeriksaan kualitas foto setelah beberapa halaman" loading="lazy" />
+          <figcaption>
+            <strong>Kontrol Kualitas</strong>
+            <ul class="points">
+              <li>Cek ketajaman, framing, dan kebersihan frame tiap beberapa halaman.</li>
+              <li><strong>Jika ada kesalahan:</strong> <u>hapus foto yang salah saat itu juga</u> lalu <u>setel ulang counter</u> ke nomor yang dihapus agar urutan tetap berlanjut.</li>
+              <li>Jaga jarak aman tepi koleksi terhadap frame ±5 cm (bila berlaku pada setupmu).</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 6) Catatan Praktik Baik -->
+        <figure class="card mini reveal">
+          <img src="assets/img/log-penamaan.jpg" alt="Pencatatan log penamaan dan urutan halaman" loading="lazy" />
+          <figcaption>
+            <strong>Catatan Praktik Baik</strong>
+            <ul class="points">
+              <li>Gunakan tabel/lembar log untuk menandai halaman yang sudah dipotret.</li>
+              <li>Simpan seluruh file dalam folder <em>session</em> yang sama untuk naskah itu.</li>
+              <li>Hindari rename manual setelah pemotretan; gunakan pengaturan <em>naming</em> di software.</li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- Tips khusus kodikologi -->
+      <p class="hint">💡 <strong>Catatan Kodikologi:</strong> Untuk naskah kuno, lakukan juga pemotretan fisik naskah secara <em>utuh (Identity/I)</em> sesuai kebutuhan kodikologi.</p>
+
+      <div class="actions">
+        <a class="btn btn-secondary" href="#tahap-3">← Kembali ke Tahap 3</a>
+        <a class="btn next" href="#tahap-5">Lanjut ke Tahap 5 →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="tahap-5" class="section alt">
+  <div class="container">
+    <article div class="card reveal">
+      <h2>Tahap 5 – Pengolahan Digital</h2>
+      <p>Pada tahap ini, hasil pemotretan diverifikasi, dilakukan pengisian metadata, dan diekspor ke format standar sebelum dikompilasi menjadi dokumen PDF/A untuk kebutuhan preservasi dan akses digital.</p>
+
+      <!-- Tambahan: Diagram workflow kecil -->
+      <div class="workflow-mini">
+        <span>Metadata</span>
+        <span class="arrow">→</span>
+        <span>Ekspor</span>
+        <span class="arrow">→</span>
+        <span>Kompilasi PDF</span>
+      </div>
+
+  <div class="grid">
+        <!-- 1) Metadata -->
+        <figure class="card mini reveal">
+          <img src="assets/img/metadata.jpg" alt="Pengisian metadata pada aplikasi capture" loading="lazy" />
+          <figcaption>
+            <strong>1) Pencantuman Metadata</strong>
+            <ul class="points">
+              <li>Pilih semua gambar sesi lalu buka panel <em>Metadata</em>.</li>
+              <li>Isi field inti: <em>Title, Creator, Job Title, Collection/Code, Date</em>.</li>
+              <li>Gunakan <em>Preset/Custom Preset</em> untuk mempercepat; <em>Apply</em> ke semua gambar.</li>
+              <li><em>Copy Adjustments</em> bila perlu untuk batch lain.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 2) Ekspor -->
+        <figure class="card mini reveal">
+          <img src="assets/img/ekspor.jpg" alt="Pengaturan resep ekspor TIFF dan JPEG" loading="lazy" />
+          <figcaption>
+            <strong>2) Ekspor Gambar (TIFF &amp; JPEG)</strong>
+            <ul class="points">
+              <li>Buka <em>Export/Recipes</em> dan centang 2 resep:</li>
+              <li><u>TIFF (Master)</u>: Uncompressed, Adobe RGB (1998), 300 ppi. Output ke folder: <code>/Master/</code>.</li>
+              <li><u>JPEG (Akses)</u>: Full Size Highest Quality (atau <em>Long Edge</em> ±3840 px / 4K), 300 ppi. Output ke folder: <code>/Access/</code>.</li>
+              <li>Pastikan lokasi output <b>berbeda</b> (master vs akses) sesuai struktur proyek.</li>
+              <li>Jalankan ekspor; cek hitungan file = jumlah halaman.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 3) Kompilasi PDF/A -->
+        <figure class="card mini reveal">
+          <img src="assets/img/pdfa.jpg" alt="Kompilasi PDF dan simpan sebagai PDF/A" loading="lazy" />
+          <figcaption>
+            <strong>3) Kompilasi PDF/A (Post-Processing)</strong>
+            <ul class="points">
+              <li>Buka aplikasi PDF (mis. Acrobat Pro) → <em>Create PDF</em> dari berkas <u>JPEG akses</u>.</li>
+              <li>Isi metadata dokumen (Title, Author, Subject, Keywords).</li>
+              <li>Optimasi ringan (opsional): <em>Image</em> 10–15% bila perlu, tetap jaga keterbacaan.</li>
+              <li>Simpan sebagai <b>PDF/A</b> untuk preservasi jangka panjang.</li>
+              <li>Simpan di folder: <code>/NamaFolderCapturing/PDF/</code> sesuai dengan kesepakatan dan penyimpanan individu.</li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="hint">
+        💡 <strong>Tips:</strong> Setelah ekspor selesai, cocokkan jumlah file di <code>/Master</code> &amp; <code>/Access</code> dengan log pemotretan. Hindari retouch yang mengubah informasi naskah; gunakan salinan akses untuk kebutuhan publikasi.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-secondary" href="#tahap-4">← Kembali ke Tahap 4</a>
+        <a class="btn next" href="#tahap-6">Lanjut ke Tahap 6 →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section id="tahap-6" class="section">
+  <div class="container">
+    <article class="card reveal">
+      <div class="step-head">
+        <h2>Tahap 6 – Prosedur Akhir</h2>
+      </div>
+
+      <p>Tutup sesi digitalisasi dengan aman dan rawat peralatan agar siap digunakan pada sesi berikutnya.</p>
+
+      <div class="grid">
+        <!-- 1) Pascapemotretan -->
+        <figure class="card mini reveal">
+          <img src="assets/img/pasca-pemotretan.jpg" alt="Mencabut kabel tether dan mematikan peralatan" loading="lazy" />
+          <figcaption>
+            <strong>Pascapemotretan</strong>
+            <ul class="points">
+              <li>Cabut <em>kabel tether</em> dari kamera.</li>
+              <li>Matikan <em>kamera</em> dan <em>lighting</em>.</li>
+              <li>Jangan biarkan kamera tergantung di <em>bracket</em>—lepaskan dan simpan ke tempat semula.</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <!-- 2) Perawatan Peralatan -->
+        <figure class="card mini reveal">
+          <img src="assets/img/perawatan-peralatan.jpg" alt="Perawatan kamera, baterai, dan lighting setelah sesi" loading="lazy" />
+          <figcaption>
+            <strong>Perawatan Peralatan</strong>
+            <ul class="points">
+              <li>Jika lanjut besok, lensa boleh tetap terpasang; jeda >1 hari, lepaskan lensa dari body.</li>
+              <li><em>Charge</em> semua baterai; cabut dari charger maks. 2 jam setelah penuh.</li>
+              <li>Periksa kondisi baterai—jika sisa 1 bar, segera ganti.</li>
+              <li>Waktu nyala lampu maks. 6 jam berturut-turut; setelah itu <u>wajib</u> dimatikan.</li>
+            </ul>
+          </figcaption>
+        </figure>
+      </div>
+
+      <p class="hint">💡 <strong>Tips:</strong> Bersihkan lensa & body dengan kain mikrofiber, simpan di tempat kering, dan catat status peralatan pada log penggunaan.</p>
+
+      <div class="actions">
+        <a class="btn btn-secondary" href="#tahap-5">← Kembali ke Tahap 5</a>
+        <a class="btn next" href="#penutup">Lanjut ke Penutup →</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+<section id="penutup" class="section">
+  <div class="container">
+    <article class="card reveal center">
+      <div class="step-head">
+        <h2>Penutup</h2>
+      </div>
+
+      <p>
+        Panduan digitalisasi ini disusun sebagai acuan bagi petugas dalam melakukan dokumentasi
+        naskah kuno secara sistematis, aman, dan sesuai standar pelestarian.
+        Melalui panduan interaktif ini, diharapkan setiap tahapan —
+        mulai dari persiapan, pengambilan gambar, hingga penyimpanan hasil —
+        dapat dilakukan dengan konsisten dan efisien.
+      </p>
+
+      <p>
+        Hasil digitalisasi yang sesuai prosedur akan mendukung tujuan utama pelestarian
+        dan akses informasi budaya bangsa melalui <strong>Perpustakaan Nasional Republik Indonesia</strong>.
+        Terima kasih atas dedikasi dan kerja sama seluruh tim dalam menjaga warisan pengetahuan ini.
+      </p>
+
+      <div class="grid center">
+        <figure class="card mini">
+          <img src="assets/img/penutupan.jpg" alt="Penutupan sesi digitalisasi naskah kuno" loading="lazy" />
+          <figcaption>Selamat! Anda telah menyelesaikan seluruh tahapan digitalisasi.</figcaption>
+        </figure>
+      </div>
+
+      <div class="actions">
+        <a href="assets/pdf/Manual Teknis Untuk Setiap Stasiun Kerja Digitalisasi.pdf" class="btn next" download>
+          📥 Unduh Panduan Lengkap (PDF)
+        </a>
+        <a class="btn btn-secondary" href="#opening">← Kembali ke Halaman Awal</a>        
+      </div>
+    </article>
+  </div>
+</section>
+
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2025 — Panduan Pelaksanaan - Pusat Preservasi dan Alih Media Bahan Perpustakaan</small>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
