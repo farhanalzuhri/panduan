@@ -392,6 +392,21 @@ figcaption {
 html {
   scroll-behavior: smooth;
 }
+/* === Override untuk layar kecil: tampilkan semua section normal === */
+@media (max-width: 768px) {
+  main {
+    scroll-snap-type: none;
+  }
+
+  .section {
+    opacity: 1 !important;
+    visibility: visible !important;
+    min-height: auto;           /* biar tidak harus setinggi viewport */
+    align-items: stretch;       /* kartu ikut tinggi konten */
+    scroll-snap-align: none;
+  }
+}
+
 
 
 
