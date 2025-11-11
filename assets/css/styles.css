@@ -447,7 +447,66 @@ html {
     display: none;
   }
 }
+/* === Lightbox / Image Modal === */
+.img-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
 
+.img-modal img.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 85vh;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.img-modal #caption {
+  margin: 1rem auto;
+  text-align: center;
+  color: #f1f1f1;
+  font-size: 1rem;
+}
+
+.img-modal .close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.img-modal .close:hover {
+  color: #ccc;
+}
+
+/* Default: tanpa hover effect di mobile */
+.card img {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Efek kaca pembesar hanya aktif di layar lebar (desktop) */
+@media (min-width: 768px) {
+  .card img {
+    cursor: zoom-in;
+  }
+
+  .card img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}
 
 
 

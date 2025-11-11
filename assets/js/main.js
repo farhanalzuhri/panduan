@@ -121,3 +121,31 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+  // Ambil modal dan elemen di dalamnya
+  const modal = document.getElementById("imgModal");
+  const modalImg = document.getElementById("imgPreview");
+  const captionText = document.getElementById("caption");
+  const closeBtn = document.querySelector(".img-modal .close");
+
+  // Saat gambar diklik
+  document.querySelectorAll(".card img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "block";
+      modalImg.src = img.src;
+      captionText.innerHTML = img.alt;
+    });
+  });
+
+  // Tutup modal
+  closeBtn.onclick = function() {
+    modal.style.display = "none";
+  };
+
+  // Tutup juga kalau klik di luar gambar
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
+
