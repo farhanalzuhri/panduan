@@ -507,6 +507,40 @@ html {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   }
 }
+/* === Equal height cards di grid === */
+.grid { 
+  align-items: stretch;                 /* bikin item di baris yang sama ikut setinggi baris */
+}
+
+.grid > .card.mini {
+  height: 100%;                         /* isi baris penuh */
+  display: flex;
+  flex-direction: column;               /* gambar di atas, caption di bawah */
+}
+
+/* Samakan tinggi gambar (16:9 atau pakai 3:2 jika kamu suka) */
+.grid > .card.mini img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Caption isi ikut mengisi sisa ruang, biar footer tombol/teks rata */
+.grid > .card.mini figcaption {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* (Opsional) jaga konsistensi tinggi antar baris juga */
+@media (min-width: 1024px) {
+  .grid > .card.mini { min-height: 420px; }
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  .grid > .card.mini { min-height: 380px; }
+}
+@media (max-width: 767px) {
+  .grid > .card.mini { min-height: 360px; }
+}
 
 
 
